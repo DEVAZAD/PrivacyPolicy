@@ -1,86 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deepanshu Azad - Games Privacy Policies</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policies | Devazad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --bg-color: #f8fafc;
-      --text-color: #334155;
-      --heading-color: #0f172a;
-      --btn-bg: #2563eb;
-      --btn-hover: #1d4ed8;
-      --container-bg: #ffffff;
+      --bg:       #0d0d0d;
+      --surface:  #141414;
+      --border:   #2a2a2a;
+      --gold:     #c9a84c;
+      --gold-dim: #a8893a;
+      --white:    #f0ece3;
+      --muted:    #888;
+      --text:     #ccc5b5;
     }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: var(--bg-color);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    .container {
-      width: 100%;
-      max-width: 600px;
-      margin: 20px;
-      padding: 40px;
-      background-color: var(--container-bg);
-      border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    .checker-bar {
+      height: 10px;
+      background-image: repeating-linear-gradient(
+        90deg,
+        var(--gold) 0px, var(--gold) 20px,
+        var(--bg)   20px, var(--bg)   40px
+      );
+      opacity: .5;
+    }
+
+    header {
+      padding: 52px 24px 36px;
       text-align: center;
     }
 
-    h1 {
-      color: var(--heading-color);
-      font-size: 2rem;
-      margin-top: 0;
-      margin-bottom: 0.5em;
+    .brand-badge {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 5px 18px;
+      margin-bottom: 24px;
     }
 
-    p {
-      margin-bottom: 2em;
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
     }
 
-    .game-links {
+    header h1 span { color: var(--gold); }
+
+    .divider {
+      width: 54px;
+      height: 2px;
+      background: var(--gold);
+      margin: 24px auto 16px;
+    }
+
+    .meta {
+      font-size: .8rem;
+      color: var(--muted);
+      letter-spacing: .05em;
+    }
+
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .hub-container {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
+      margin-top: 40px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 15px 20px;
-      background-color: var(--btn-bg);
-      color: #ffffff;
+    .game-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 30px;
+      border-radius: 2px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: background-color 0.2s ease;
+      display: block;
+      color: var(--white);
     }
 
-    .btn:hover {
-      background-color: var(--btn-hover);
+    .game-card:hover {
+      transform: translateY(-5px);
+      border-left-color: var(--white);
+      text-decoration: none;
     }
+
+    .game-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+
+    .game-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .game-card .icon {
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+      display: block;
+      font-style: normal;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px 20px;
+      border-top: 1px solid var(--border);
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: auto;
+    }
+
+    footer strong { color: var(--gold-dim); }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(16px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    .wrapper > * { animation: fadeUp .45s ease both; }
+    .wrapper > *:nth-child(1)  { animation-delay:.05s }
+    .wrapper > *:nth-child(2)  { animation-delay:.10s }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Privacy Policies</h1>
-    <p>Please select a game to view its specific privacy policy.</p>
+
+<div class="checker-bar"></div>
+
+<header>
+  <div class="brand-badge">Devazad</div>
+  <h1>Privacy <span>Hub</span></h1>
+  <div class="divider"></div>
+  <p class="meta">Select a game to view its policy</p>
+</header>
+
+<div class="wrapper">
+  <div class="hub-container">
+    <a href="chess-privacy.html" class="game-card">
+      <i class="icon">♔</i>
+      <h2>Online Chess</h2>
+      <p>Multiplayer strategy game</p>
+    </a>
     
-    <div class="game-links">
-      <a href="chess-privacy.html" class="btn">Chess Privacy Policy</a>
-      <a href="reflex-duel-privacy.html" class="btn">Reflex Duel Privacy Policy</a>
-    </div>
+    <a href="reflex-duel-privacy.html" class="game-card">
+      <i class="icon">⚡</i>
+      <h2>Reflex Duel</h2>
+      <p>Fast-paced reaction game</p>
+    </a>
   </div>
+</div>
+
+<footer>
+  <p>© 2026 <strong>Devazad</strong> &nbsp;·&nbsp; All rights reserved.</p>
+</footer>
+
 </body>
 </html>
