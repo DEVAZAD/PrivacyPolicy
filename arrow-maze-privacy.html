@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Arrow Maze | Devazad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:       #0d0d0d;
+      --surface:  #141414;
+      --border:   #2a2a2a;
+      --gold:     #c9a84c;
+      --gold-dim: #a8893a;
+      --white:    #f0ece3;
+      --muted:    #888;
+      --text:     #ccc5b5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    .checker-bar {
+      height: 10px;
+      background-image: repeating-linear-gradient(
+        90deg,
+        var(--gold) 0px, var(--gold) 20px,
+        var(--bg)   20px, var(--bg)   40px
+      );
+      opacity: .5;
+    }
+
+    header {
+      padding: 52px 24px 36px;
+      text-align: center;
+    }
+
+    .brand-badge {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 5px 18px;
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+    }
+
+    header h1 span { color: var(--gold); }
+
+    .divider {
+      width: 54px;
+      height: 2px;
+      background: var(--gold);
+      margin: 24px auto 16px;
+    }
+
+    .meta {
+      font-size: .8rem;
+      color: var(--muted);
+      letter-spacing: .05em;
+    }
+
+    .wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 22px 26px;
+      margin: 36px 0 44px;
+      font-size: .95rem;
+      border-radius: 2px;
+    }
+
+    section {
+      margin-bottom: 42px;
+      padding-bottom: 42px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h2 .icon { color: var(--gold); font-style: normal; font-size: 1rem; }
+
+    section p { margin-bottom: 14px; font-size: .96rem; }
+    section p:last-child { margin-bottom: 0; }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    ul.plist { list-style: none; padding: 0; margin: 14px 0; }
+
+    ul.plist li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 9px;
+      font-size: .95rem;
+    }
+
+    ul.plist li::before {
+      content: '\27A4';
+      position: absolute;
+      left: 0; top: 3px;
+      color: var(--gold-dim);
+      font-size: .72rem;
+    }
+
+    .note {
+      background: #111;
+      border: 1px solid var(--border);
+      border-left: 3px solid #555;
+      padding: 14px 18px;
+      font-size: .88rem;
+      color: var(--muted);
+      border-radius: 2px;
+      margin-top: 14px;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 28px;
+      border-radius: 2px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .contact-box .piece { font-size: 2.2rem; display: block; margin-bottom: 10px; color: var(--gold); }
+
+    .contact-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .contact-box p { font-size: .9rem; color: var(--muted); margin-bottom: 12px; }
+
+    footer {
+      text-align: center;
+      padding: 26px 20px;
+      border-top: 1px solid var(--border);
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    footer strong { color: var(--gold-dim); }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(16px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    .wrapper > * { animation: fadeUp .45s ease both; }
+    .wrapper > *:nth-child(1)  { animation-delay:.05s }
+    .wrapper > *:nth-child(2)  { animation-delay:.10s }
+    .wrapper > *:nth-child(3)  { animation-delay:.15s }
+    .wrapper > *:nth-child(4)  { animation-delay:.20s }
+    .wrapper > *:nth-child(5)  { animation-delay:.25s }
+    .wrapper > *:nth-child(6)  { animation-delay:.30s }
+    .wrapper > *:nth-child(7)  { animation-delay:.35s }
+    .wrapper > *:nth-child(8)  { animation-delay:.40s }
+    .wrapper > *:nth-child(9)  { animation-delay:.45s }
+    .wrapper > *:nth-child(10) { animation-delay:.50s }
+  </style>
+</head>
+<body>
+
+<div class="checker-bar"></div>
+
+<header>
+  <div class="brand-badge">Devazad</div>
+  <h1>Privacy <span>Policy</span></h1>
+  <div class="divider"></div>
+  <p class="meta">Arrow Maze &nbsp;·&nbsp; Effective: July 13, 2026</p>
+</header>
+
+<div class="wrapper">
+
+  <div class="intro">
+    Devazad is committed to respecting your privacy and the integrity and security of your personal data.
+    This page informs visitors of our policies regarding the collection, use, and disclosure of personal
+    information when using <strong style="color:var(--white)">Arrow Maze</strong>. By choosing to use
+    our Service, you agree to the collection and use of information in accordance with this policy.
+  </div>
+
+  <section id="info">
+    <h2><i class="icon">&#10148;</i> Information Collection and Use</h2>
+    <p>
+      Arrow Maze does not require you to create an account or provide personally identifiable information
+      such as your name, email address, or phone number. We, the developer, do not collect, store, or
+      transmit any personal information ourselves.
+    </p>
+    <p>
+      For a better experience, certain technical data may be processed automatically through third-party
+      services integrated into the game (see Advertising below). Any information processed is used solely
+      for providing and improving the Service. Arrow Maze uses the following third-party service that may
+      collect information used to identify you:
+    </p>
+    <ul class="plist">
+      <li><a href="https://unity.com/legal/privacy-policy" target="_blank">Unity Technologies — Privacy Policy</a></li>
+      <li><a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank">Unity Game Player &amp; App User Privacy Policy</a></li>
+    </ul>
+  </section>
+
+  <section id="local">
+    <h2><i class="icon">&#10148;</i> On-Device Data</h2>
+    <p>
+      Your game progress — including your current level, coins, hints, and settings — is stored
+      <strong style="color:var(--white)">only on your device</strong> using local storage. This data
+      never leaves your device, is not transmitted to us or any third party, and is removed if you
+      uninstall the app or clear its data.
+    </p>
+  </section>
+
+  <section id="ads">
+    <h2><i class="icon">&#10148;</i> Advertising (Unity Ads)</h2>
+    <p>
+      Arrow Maze displays advertisements through <strong style="color:var(--white)">Unity Ads</strong>
+      (Unity Technologies). To serve relevant ads, Unity Ads may collect and process your device's
+      Advertising ID, ad interaction data, device locale, device type and operating system, and
+      approximate location derived from your IP address.
+    </p>
+    <p>You can opt out of personalised ads by resetting or disabling your Advertising ID:</p>
+    <ul class="plist">
+      <li><strong style="color:var(--white)">Android:</strong> Settings &rarr; Privacy &rarr; Ads &rarr; Delete Advertising ID</li>
+      <li><strong style="color:var(--white)">iOS:</strong> Settings &rarr; Privacy &amp; Security &rarr; Tracking</li>
+    </ul>
+    <p>For more details, see <a href="https://unity.com/legal/privacy-policy" target="_blank">Unity's Privacy Policy</a>.</p>
+  </section>
+
+  <section id="log">
+    <h2><i class="icon">&#10148;</i> Log Data</h2>
+    <p>
+      Whenever you use our Service, in the case of an error or diagnostic event, data and information may be
+      collected on your device through the third-party tools above. This Log Data may include:
+    </p>
+    <ul class="plist">
+      <li>Your device's Internet Protocol (IP) address</li>
+      <li>Device name and operating system version</li>
+      <li>App configuration at the time of use</li>
+      <li>Date, time, and duration of your session</li>
+      <li>Other diagnostic statistics</li>
+    </ul>
+    <div class="note">
+      This diagnostic data is processed by our third-party providers to operate and improve their
+      services and is not stored by Devazad.
+    </div>
+  </section>
+
+  <section id="cookies">
+    <h2><i class="icon">&#10148;</i> Cookies</h2>
+    <p>
+      This Service does not explicitly use cookies. However, the app may use third-party code and libraries
+      that use cookies or similar identifiers to collect information and to improve their services. You have
+      the option to accept or refuse these. If you choose to refuse them, some portions of the Service may
+      not function as intended.
+    </p>
+  </section>
+
+  <section id="providers">
+    <h2><i class="icon">&#10148;</i> Service Providers</h2>
+    <p>We employ third-party companies and services for the following reasons:</p>
+    <ul class="plist">
+      <li>To display advertisements within the game (Unity Ads)</li>
+      <li>To perform Service-related services on our behalf</li>
+      <li>To assist in analysing how our Service is used</li>
+    </ul>
+    <p>
+      These third parties have access to certain technical information solely to perform tasks assigned to them
+      on our behalf. They are obligated not to disclose or use this information for any other purpose.
+    </p>
+  </section>
+
+  <section id="security">
+    <h2><i class="icon">&#10148;</i> Security</h2>
+    <p>
+      We value your trust and strive to use commercially acceptable means of protecting any data processed
+      through our Service. However, please be aware that no method of transmission over the internet, or
+      method of electronic storage, is 100% secure and reliable — we cannot guarantee absolute security.
+    </p>
+  </section>
+
+  <section id="links">
+    <h2><i class="icon">&#10148;</i> Links to Other Sites</h2>
+    <p>
+      This Service may contain links to third-party websites. If you click a third-party link, you will be
+      directed to that site. These external sites are not operated by us, and we strongly advise you to review
+      the Privacy Policy of any such websites. We have no control over and assume no responsibility for the
+      content, privacy policies, or practices of any third-party sites or services.
+    </p>
+  </section>
+
+  <section id="children">
+    <h2><i class="icon">&#10148;</i> Children's Privacy</h2>
+    <p>
+      Arrow Maze is intended for general audiences and is not directed at children under the age of 13.
+      We do not knowingly collect personal information from children under 13. If you are a parent or
+      guardian and believe your child has provided personal information through the game, please contact
+      us and we will take appropriate steps to remove that information.
+    </p>
+  </section>
+
+  <section id="changes">
+    <h2><i class="icon">&#10148;</i> Changes to This Privacy Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. You are advised to review this page periodically
+      for any changes. We will notify you of any changes by posting the updated Privacy Policy on this page.
+    </p>
+    <p>This policy is effective as of <strong style="color:var(--white)">July 13, 2026</strong>.</p>
+  </section>
+
+  <section id="contact">
+    <h2><i class="icon">&#10148;</i> Contact Us</h2>
+    <p>
+      If you have any questions or suggestions about this Privacy Policy, do not hesitate to contact us:
+    </p>
+    <div class="contact-box">
+      <span class="piece">&#10148;</span>
+      <h3>Devazad</h3>
+      <p>Developer of Arrow Maze</p>
+      <a href="mailto:devazad.game@gmail.com">devazad.game@gmail.com</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 <strong>Devazad</strong> &nbsp;·&nbsp; Arrow Maze &nbsp;·&nbsp; All rights reserved.</p>
+</footer>
+
+</body>
+</html>
